@@ -9,7 +9,9 @@ Counter: {{counter}}<br>
 </button>
 <button (click)="increment()">
     More
-</button>`,
+</button>
+  <foobar>
+  </foobar>`,
 })
 export class App {
   counter: number = 0;
@@ -18,3 +20,10 @@ export class App {
     this.counter++;
   }
 }
+
+@Component({
+  selector: 'foobar',
+  template:
+      `Foo Bar`
+})
+export class FooBar {}
