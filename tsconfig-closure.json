@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "es2015",
     "moduleResolution": "node",
     "declaration": true,
@@ -16,10 +16,8 @@
     "lib": ["es2015", "dom"]
   },
   "files": [
-    "./src/experiment/module.ts",
-    "./src/helloworld/module.ts",
-    "./src/largetable/table.ts",
-    "./src/tree/tree.ts"
+    "./src/experiment/main.ts",
+    "./src/helloworld/main.ts"
   ],
   "angularCompilerOptions": {
     "strictMetadataEmit": true

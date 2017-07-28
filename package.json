@@ -10,7 +10,9 @@
     "ngc": "ngc -p tsconfig.json",
     "rollup": "rollup -c rollup.config.js",
     "build": "yarn run public && yarn run ngc && yarn run rollup",
-    "start": "serve dist"
+    "start": "serve dist",
+    "closure-experiment": "ngc -p tsconfig-closure.json && java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf --entry_point=./tmp/src/experiment/main --output_manifest=./tmp/manifest.MF --js_output_file=dist/experiment/bundle.js",
+    "closure-helloworld": "ngc -p tsconfig-closure.json && java -jar node_modules/google-closure-compiler/compiler.jar --flagfile closure.conf --entry_point=./tmp/src/helloworld/main --output_manifest=./tmp/manifest.MF --js_output_file=dist/helloworld/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +37,7 @@
     "@angular/router": "4.3.1",
     "reflect-metadata": "0.1.9",
     "rxjs": "5.4.2",
-    "zone.js": "0.8.14",
+    "zone.js": "0.8.12",
     "iv": "b-laporte/iv"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-typescript": "0.8.1",
-    "rollup-plugin-uglify": "2.0.1"
+    "rollup-plugin-uglify": "2.0.1",
+    "google-closure-compiler": "20170521.0.0"
   }
 }
